@@ -80,10 +80,4 @@ Thus, focusing on fields like **description**, **EAN**, and **product image** pr
 2. Run the script in a Python environment.
 3. Check the printed results and explore the exported CSV files or the SQLite database for more details.
 
----
 
-Let me know if you have any questions or need further improvements!
-
----
-
-This version now explains why ETIM was not included, keeping the reasoning simple and focused on internal data quality needs.
