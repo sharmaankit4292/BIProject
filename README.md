@@ -1,6 +1,4 @@
-Sure! Here's an updated version of the README that includes the reasoning for not considering ETIM:
 
----
 
 # NexMart Data Quality Assessment
 
