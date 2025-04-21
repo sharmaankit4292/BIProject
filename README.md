@@ -23,19 +23,17 @@ Reads three raw CSV files:
 - Only records with valid join keys are retained.
 
 ### 4. Checks Data Completeness
-- Flags whether each product is **complete** (no missing fields).
+- Flags whether each product is **complete** (no missing fields among key ones).
 - Adds a field for **Missing Fields Count**.
 
 ### 5. Assesses Data Quality
-A product is labeled **"good quality"** if it has:
-- A valid description (see [Description Logic](#description-logic))
-- A valid EAN (European Article Number)
-- A valid product image (`Picture normal reduced`)
 
-### 6. Exports the Output
-- Saves the full merged dataset with completeness flags.
-- Separates and saves `good_quality_data.csv` and `bad_quality_data.csv`.
-- Loads the full dataset into an in-memory SQLite DB for easy SQL querying.
+A product is labeled **"good quality"** only if:
+- It has a valid **description**, determined using fallback logic (see below).
+- It includes a **valid EAN** (European Article Number).
+- It includes a valid image in **Picture normal reduced**.
+
+If **any** of these fields are missing, the product is labeled as **"bad quality"**. This stricter logic ensures high-quality listings that are usable across internal teams.
 
 ---
 
@@ -46,39 +44,41 @@ To determine if a product has a valid description, the following fallback logic 
 2. If not, fall back to `Short description 2`.
 3. If still unavailable, use `Long description`.
 
-This approach ensures we always retrieve the best available description without relying on a single inconsistent field. It helps prevent data loss and ensures fairer, more consistent quality assessments.
+This cascading logic ensures every product gets the best available description, even if some fields are empty or inconsistently used. It reduces noise in quality scoring and helps the business work with the most informative version of each product description.
 
-This practice is critical to clean and harmonize legacy or third-party datasets, where product details might be spread across multiple description fields.
+This approach is critical to maintaining consistent quality metrics, especially when aggregating or displaying products internally.
 
 ---
 
 ## 🔍 Why This Matters
 
 ### Internal Benefits:
-- **Product Teams** can easily identify and fix incomplete listings.
-- **Marketing & E-commerce** teams rely on accurate data to improve listings.
-- **Data Teams** gain visibility into quality trends for reporting and tooling.
+- **Product Teams** can quickly identify and fix incomplete or low-quality product records.
+- **Marketing & E-commerce** teams get more reliable listings to work with.
+- **Support & Fulfillment** staff benefit from clearer product identifiers and visuals.
+- **Data Teams** can track trends in quality for reporting, QA, and tooling.
 
 ---
 
-## 🧾 Why EAN Is Important
+## 🧾 Why EAN Is Important for Internal Stakeholders
 
-The EAN (European Article Number) is a critical field because:
-- It uniquely identifies each product across systems.
-- It’s required for database integrity and platform integration.
-- Products without EANs may be unsearchable or duplicated.
-- It supports logistics, tracking, and synchronization.
+The EAN (European Article Number) is a critical internal field because:
+- It acts as a **unique identifier** across internal tools, warehouses, and databases.
+- Ensures **accurate matching** of product information in ERP and inventory systems.
+- Enables reliable **linking of internal records** to suppliers, retailers, and pricing tools.
+- Missing EANs lead to **data duplication** and operational inconsistencies.
+- Teams in **logistics, fulfillment, procurement**, and even **customer support** depend on it for validation and referencing.
 
 ---
 
-## 🖼️ Why `Picture normal reduced` Is Important
+## 🖼️ Why `Picture normal reduced` Is Important for Internal Stakeholders
 
-The `Picture normal reduced` field provides optimized, lightweight product images:
-- Helps internal teams visually validate product records at scale.
-- Enables consistent appearance across internal systems and dashboards.
-- Supports promotional tools and richer business reporting.
-- Accelerates manual QA and reduces decision-making friction.
-- Missing images disrupt product reviews and hinder marketing operations.
+The `Picture normal reduced` field provides optimized product images, tailored for internal usability:
+- Enables **quick product recognition** by internal teams like QA, product management, and support.
+- Supports **faster manual reviews and categorization** by giving a visual cue.
+- Makes internal dashboards and listings more **navigable and informative**.
+- Ensures consistent image availability for **training sets, internal demos, or tooling**.
+- Its absence leads to **slower validation processes** and poor stakeholder experience during review or audit.
 
 ---
 
