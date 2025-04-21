@@ -1,89 +1,147 @@
-NexMart Data Quality Assessment
-This project helps analyze and improve the quality of product data from NexMart. The goal is to clean up the product information, identify gaps, and make sure the data is ready for use across internal teams.
+# 📦 NexMart Data Quality Assessment
 
-What the Code Does
-Loads the data
-It reads three CSV files: manufacturers.csv, product_descriptions.csv, and product_properties.csv.
+This project analyzes and improves the quality of product data from NexMart. The goal is to clean, validate, and assess product information to ensure it’s optimized for internal operations.
 
-Cleans up the data
-It replaces common bad values like "N/A", "null", or blank fields with NaN to standardize the data.
+---
 
-Combines the data
-It merges the three files together using common columns (like Article Number and Manufacturer number) to create one full dataset.
+## 🛠 What the Code Does
 
-Checks data completeness
-It checks each product to see if all the required fields (like descriptions, EAN, etc.) are filled out. It flags whether a product is "complete" or missing information.
+### 1. Loads the Data
+Reads three raw CSV files:
+- `manufacturers.csv`
+- `product_descriptions.csv`
+- `product_properties.csv`
 
-Assesses data quality
-It labels each product as either "good" or "bad" quality. A product is considered "good" if it has:
+### 2. Cleans the Data
+- Replaces common bad values (`N/A`, `null`, `'`, empty strings, etc.) with `NaN`.
+- Trims whitespace from string fields.
 
-A description (logic explained below)
+### 3. Combines the Datasets
+- Merges the data using:
+  - `Article Number`
+  - `Manufacturer number`
+- Only records with valid join keys are retained.
 
-A valid EAN (barcode)
+### 4. Checks Data Completeness
+- Flags whether each product is **complete** (no missing fields).
+- Adds a field for **Missing Fields Count**.
 
-A product image (Picture normal reduced)
+### 5. Assesses Data Quality
+A product is labeled **"good quality"** if it has:
+- A valid description (see [Description Logic](#description-logic))
+- A valid EAN (European Article Number)
+- A valid product image (`Picture normal reduced`)
 
-Outputs the results
+### 6. Exports the Output
+- Saves the full merged dataset with completeness flags.
+- Separates and saves `good_quality_data.csv` and `bad_quality_data.csv`.
+- Loads the full dataset into an in-memory SQLite DB for easy SQL querying.
 
-It saves the cleaned data with completeness checks.
+---
 
-It separates products into two files: good quality and bad quality.
+## 🧠 Description Logic
 
-It also loads the data into an in-memory database (SQLite) for easy querying.
+To determine if a product has a valid description, the following fallback logic is used:
+1. Use `Short description` if available.
+2. If not, fall back to `Short description 2`.
+3. If still unavailable, use `Long description`.
 
-Description Field Logic
-To assess if a product has a valid description, the following fallback logic is applied:
-We first check Short description. If it’s missing, we check Short description 2. If that’s also missing, we look at the Long description.
-This step ensures we capture any useful product detail even if it appears in an alternate field.
-The logic guarantees the best available product description is used for quality checks.
-It prevents otherwise usable products from being marked "bad" due to minor field inconsistencies.
-This approach significantly boosts data quality metrics and ensures fairer, more accurate evaluations.
+This approach ensures we always retrieve the best available description without relying on a single inconsistent field. It helps prevent data loss and ensures fairer, more consistent quality assessments.
 
-Why This Matters
-For Internal Teams:
-Product & Content Teams: They can focus on improving data where it’s most needed.
+This practice is critical to clean and harmonize legacy or third-party datasets, where product details might be spread across multiple description fields.
 
-Marketing & E-commerce: They can see which products have complete data for better listings.
+---
 
-Data & Tech Teams: They can track data quality trends over time.
+## 🔍 Why This Matters
 
-Why EAN Is Important
-EAN (European Article Number) is essential because:
+### Internal Benefits:
+- **Product Teams** can easily identify and fix incomplete listings.
+- **Marketing & E-commerce** teams rely on accurate data to improve listings.
+- **Data Teams** gain visibility into quality trends for reporting and tooling.
 
-It uniquely identifies each product.
+---
 
-It’s required for proper syncing with other systems and platforms.
+## 🧾 Why EAN Is Important
 
-Without an EAN, products won’t appear in search results or may not be recognized properly.
+The EAN (European Article Number) is a critical field because:
+- It uniquely identifies each product across systems.
+- It’s required for database integrity and platform integration.
+- Products without EANs may be unsearchable or duplicated.
+- It supports logistics, tracking, and synchronization.
 
-Why Picture normal reduced Is Important
-The Picture normal reduced field provides a lightweight, optimized image of the product.
-It helps internal teams visually verify and QA products at scale.
-This image improves catalog consistency across platforms and dashboards.
-It enables richer promotional content and better user experience in internal tools.
-Without it, internal workflows slow down and product data loses visual context.
+---
 
-Why ETIM Was Not Considered
-ETIM (European Technical Information Model) is a standardized classification system used primarily for external systems (e.g., third-party platforms or suppliers). It’s essential for categorizing products in specific ways for external trade.
+## 🖼️ Why `Picture normal reduced` Is Important
 
-However, ETIM wasn’t considered in this analysis because:
+The `Picture normal reduced` field provides optimized, lightweight product images:
+- Helps internal teams visually validate product records at scale.
+- Enables consistent appearance across internal systems and dashboards.
+- Supports promotional tools and richer business reporting.
+- Accelerates manual QA and reduces decision-making friction.
+- Missing images disrupt product reviews and hinder marketing operations.
 
-Internal Focus: The goal was to assess and improve internal data quality, specifically product descriptions, EANs, and images, which directly affect how the products are displayed and managed in NexMart’s internal systems.
+---
 
-External Use: ETIM is more relevant for product classification in external marketplaces or systems, not for assessing the quality of data that is used directly within NexMart’s internal processes.
+## ❌ Why ETIM Was Excluded
 
-Thus, focusing on fields like description, EAN, and product image provides more immediate value for NexMart’s internal teams, and these are the primary fields impacting product visibility, completeness, and quality.
+ETIM (European Technical Information Model) is valuable for **external** product classification but was **not used** in this internal-focused analysis.
 
-Files Generated
-merged_data_with_completeness.csv: Full dataset with completeness information.
+- Our focus: **internal product readiness**, not external taxonomy alignment.
+- ETIM relevance is limited for internal completeness and display validation.
+- Descriptions, EANs, and images have direct business impact for internal users.
 
-good_quality_data.csv: Products that have all the required fields (good quality).
+---
 
-bad_quality_data.csv: Products missing key fields (bad quality).
+## 📂 Output Files
 
-How to Use
-Make sure the CSV file paths are correct.
+| File Name                                   | Description                                  |
+|--------------------------------------------|----------------------------------------------|
+| `merged_data_with_completeness.csv`        | Full dataset with completeness indicators    |
+| `good_quality_data.csv`                    | Products with full, high-quality data        |
+| `bad_quality_data.csv`                     | Products missing key fields                  |
 
-Run the script in a Python environment.
+---
 
-Check the printed results and explore the exported CSV files or the SQLite database for more details.
+## ▶️ How to Run
+
+1. Clone the repo and place the data files inside the `/data` folder.
+2. Adjust the file paths in the script if necessary.
+3. Run the Python script in your local environment.
+4. Check the printed console output and exported files.
+
+---
+
+## 🧪 Optional: Use SQL for Analysis
+
+The cleaned dataset is loaded into an in-memory SQLite DB:
+- You can query it using standard SQL.
+- Useful for additional insights (e.g., most incomplete manufacturers, field-level gaps).
+
+---
+
+## 🧩 Bonus: Ideas for Production Readiness
+
+For a full production setup:
+- Add **unit tests** for each cleaning step.
+- Use **logging** instead of `print()` statements.
+- Track data quality history with **versioning or audit logs**.
+- Parameterize file paths and thresholds via a **config file**.
+- Package the logic in a **modular pipeline or ETL framework**.
+
+---
+
+## 📊 Next Steps: Power BI Dashboard
+
+- The exported `merged_data_with_completeness.csv` can be used in Power BI.
+- Create a one-page dashboard with:
+  - Completeness trends
+  - Manufacturer performance
+  - Top product gaps
+  - Visual filters by quality label
+
+---
+
+## ✅ Summary
+
+Improving data quality drives better product listings, internal efficiency, and decision-making. This project provides a framework to identify gaps, prioritize fixes, and improve the data landscape at NexMart.
+
