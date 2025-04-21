@@ -108,11 +108,41 @@ ETIM (European Technical Information Model) is valuable for **external** product
 
 ## 📂 Output Files
 
-| File Name                                   | Description                                  |
-|--------------------------------------------|----------------------------------------------|
-| `merged_data_with_completeness_cleaned_final.csv`        | Full dataset with completeness indicators    |
-| `good_quality_data_cleaned_final.csv`                    | Products with full, high-quality data        |
-| `bad_quality_data_cleaned_final.csv`                     | Products missing key fields                  |
+# 📁 Output Files
+
+This folder contains cleaned datasets along with results from various SQL queries run during the data quality assessment process.
+
+---
+
+## 📊 Cleaned Data Files
+
+| File Name                                         | Description                                      |
+|--------------------------------------------------|--------------------------------------------------|
+| `merged_data_with_completeness_cleaned_final.csv` | Full dataset with completeness indicators        |
+| `good_quality_data_cleaned_final.csv`             | Products with full, high-quality data            |
+| `bad_quality_data_cleaned_final.csv`              | Products missing key fields                      |
+
+---
+
+## 🗃️ SQL Query Output Files
+
+| File Name                               | Description                                                       |
+|----------------------------------------|-------------------------------------------------------------------|
+| `sqlquery1_Manufacturer_quality.csv`   | Manufacturer-level quality statistics (Query 1)                   |
+| `sqlquery1_1_mostimproved.csv`         | Manufacturers with the most improved quality (Subquery 1.1)       |
+| `sqlquery1_2_Manufacturer_quality.csv` | Detailed manufacturer quality view (Subquery 1.2)                 |
+| `sqlquery2_field_completion_rates.csv` | Field-wise completion rate analysis (Query 2)                     |
+| `sqlquery3_1_EANvsquality.csv`         | Relationship between EAN completeness and product quality (Q3.1) |
+| `sqlquery3_2_missing_combinations.csv` | Missing key combinations across fields (Query 3.2)                |
+| `sqlquery1_mostimproved.csv`           | Alternate export of most improved manufacturers                  |
+
+---
+
+## 📄 Documentation
+
+| File Name              | Description                                    |
+|------------------------|------------------------------------------------|
+| `sqlqueryexplanation.docx` | Explanation of all SQL queries and logic used |
 
 ---
 
