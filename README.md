@@ -106,7 +106,7 @@ ETIM (European Technical Information Model) is valuable for **external** product
 
 ---
 
-## 📂 Output Files
+
 
 # 📁 Output Files
 
