@@ -123,16 +123,16 @@ This folder contains cleaned datasets along with results from various SQL querie
 | `bad_quality_data_cleaned_final.csv`              | Products missing key fields                      |
 
 ---
-
 ## 🗃️ SQL Query Output Files
 
-| File Name                               | Description                                                       |
-|----------------------------------------|-------------------------------------------------------------------|                  |
-| `sqlquery1.1_mostimproved.csv`         | Manufacturers with the most improved quality (Query 1.1)       |
-| `sqlquery1.2_Manufacturer_quality.csv` | Detailed manufacturer quality view (Subquery 1.2)                 |
-| `sqlquery2_field_completion_rates.csv` | Field-wise completion rate analysis (Query 2)                     |
-| `sqlquery3.1_EANvsquality.csv`         | Relationship between EAN completeness and product quality (Query 3.1) |
-| `sqlquery3.2_missing_combinations.csv` | Missing key combinations across fields (Query 3.2)                |
+| File Name                             | Description                                                                 |
+|--------------------------------------|-----------------------------------------------------------------------------|
+| `sqlquery1.1_mostimproved.csv`       | Manufacturers with the most improved quality (Query 1.1)                    |
+| `sqlquery1.2_Manufacturer_quality.csv` | Detailed manufacturer quality view (Subquery 1.2)                         |
+| `sqlquery2_field_completion_rates.csv` | Field-wise completion rate analysis (Query 2)                             |
+| `sqlquery3.1_EANvsquality.csv`       | Relationship between EAN completeness and product quality (Query 3.1)      |
+| `sqlquery3.2_missing_combinations.csv` | Missing key combinations across fields (Query 3.2)                        |
+
            
 
 ---
