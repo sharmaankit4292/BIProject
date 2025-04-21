@@ -138,7 +138,7 @@ These practices ensure scalability, reliability, and maintainability—making th
 
 ## 📊 Next Steps: Power BI Dashboard
 
-- The exported `merged_data_with_completeness.csv` can be used in Power BI.
+- The exported `merged_data_with_completeness_cleaned.csv` can be used in Power BI.
 - Create a one-page dashboard with:
   - Completeness trends
   - Manufacturer performance
