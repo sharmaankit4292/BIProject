@@ -144,6 +144,7 @@ These practices ensure scalability, reliability, and maintainability—making th
   - Manufacturer performance
   - Manfactures with bad fields
   - Dax for Product Name and bad fields. This helps us finds gaps in products/main_product, manufactures, manufacturer numbers etc.
+  - The Code and Explanation for the Dax code is the Dax code & Explanation.txt file
 
 ---
 
