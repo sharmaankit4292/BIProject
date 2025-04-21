@@ -86,7 +86,7 @@ The `Picture normal reduced` field provides optimized product images, tailored f
 
 ETIM (European Technical Information Model) is valuable for **external** product classification but was **not used** in this internal-focused analysis.
 
-- Our focus: **internal product readiness**, not external taxonomy alignment.
+- Our focus: **internal product readiness**, not external alignment.
 - ETIM relevance is limited for internal completeness and display validation.
 - Descriptions, EANs, and images have direct business impact for internal users.
 
@@ -96,9 +96,9 @@ ETIM (European Technical Information Model) is valuable for **external** product
 
 | File Name                                   | Description                                  |
 |--------------------------------------------|----------------------------------------------|
-| `merged_data_with_completeness.csv`        | Full dataset with completeness indicators    |
-| `good_quality_data.csv`                    | Products with full, high-quality data        |
-| `bad_quality_data.csv`                     | Products missing key fields                  |
+| `merged_data_with_completeness_cleaned.csv`        | Full dataset with completeness indicators    |
+| `good_quality_data_cleaned.csv`                    | Products with full, high-quality data        |
+| `bad_quality_data_cleaned.csv`                     | Products missing key fields                  |
 
 ---
 
@@ -129,7 +129,7 @@ To elevate this project into a production-ready pipeline, consider the following
 -  **Build a Modular ETL Pipeline**: Break the logic into clear, reusable steps using an Extract-Transform-Load framework to support batch or streaming data.
 -  **Environment Separation (Dev, Test, Prod)**: Establish different environments to support experimentation, testing, and deployment without data contamination. This helps enforce data governance and approval flows.
 -  **Implement CI/CD Pipelines**: Use DevOps practices like GitHub Actions, Jenkins, or Azure Pipelines to automate testing, linting, deployment, and report generation. This improves delivery speed and reduces manual errors.
-  **Implement Row level security**: managing access level for different departments, stakeholders & externals.
+- **Implement Row level security**: managing access level for different departments, stakeholders & externals.
    
 These practices ensure scalability, reliability, and maintainability—making the solution enterprise-ready and aligned with NexMart’s data strategy goals.
 
