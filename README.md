@@ -32,7 +32,7 @@ A product is labeled **"good quality"** only if:
 - It has a valid **description**, determined using fallback logic (see below).
 - It includes a **valid EAN** (European Article Number).
 - It includes a valid image in **Picture normal reduced**.
-- It includes a **Technical details**.
+- It includes a **Technical detail**.
 
 If **any** of these fields are missing, the product is labeled as **"bad quality"**. This stricter logic ensures high-quality listings that are usable across internal teams.
 
