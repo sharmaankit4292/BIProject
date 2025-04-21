@@ -1,6 +1,6 @@
 # 📦 NexMart Data Assessment
 
-This project analyzes and improves the quality of product data from NexMart. The goal is to clean, validate, and assess product information to ensure it’s optimized for internal operations.
+This project analyzes and improves the quality of product data from NexMart. The goal is to clean, validate, and assess product information to ensure it’s optimized for internal operations. Hence for better decision making accross various stakeholders like Sales, Product etc.
 
 ---
 
