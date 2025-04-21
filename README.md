@@ -86,11 +86,11 @@ The `Picture normal reduced` field provides optimized product images, tailored f
 
 Technical details play a crucial role in maintaining data integrity and supporting business operations. Here's why they're essential for internal teams:
 
-1. **Accuracy in Operations**: They ensure product listings, procurement, and logistics are based on precise specifications.
-2. **Product Differentiation**: Sales and marketing teams use them to highlight unique features and compare products effectively.
-3. **Efficient Support**: Customer service relies on them for accurate, fast responses to technical questions and issue resolution.
-4. **Data Consistency**: They contribute to better data validation and consistency across platforms and systems.
-5. **Better Decision-Making**: Well-documented technical data empowers teams with reliable information for planning and execution.
+- **Accuracy in Operations**: They ensure product listings, procurement, and logistics are based on precise specifications.
+- **Product Differentiation**: Sales and marketing teams use them to highlight unique features and compare products effectively.
+- **Efficient Support**: Customer service relies on them for accurate, fast responses to technical questions and issue resolution.
+- **Data Consistency**: They contribute to better data validation and consistency across platforms and systems.
+- **Better Decision-Making**: Well-documented technical data empowers teams with reliable information for planning and execution.
 
 
 
@@ -120,7 +120,7 @@ ETIM (European Technical Information Model) is valuable for **external** product
 
 1. Clone the repo and place the data files inside the `/data` folder.
 2. Adjust the file paths in the script if necessary.
-3. Run the Python script in your local environment.
+3. Run the Python and SQL script together in one notebook in your local environment.
 4. Check the printed console output and exported files.
 
 ---
