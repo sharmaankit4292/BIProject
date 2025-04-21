@@ -116,6 +116,7 @@ ETIM (European Technical Information Model) is valuable for **external** product
 The cleaned dataset is loaded into an in-memory SQLite DB:
 - You can query it using standard SQL.
 - Useful for additional insights (e.g., most improved manufacturers, field-level gaps).
+- The explanation is mentioned in sql_script.py
 
 ---
 
