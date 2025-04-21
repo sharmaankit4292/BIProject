@@ -141,10 +141,9 @@ These practices ensure scalability, reliability, and maintainability—making th
 
 - The exported `merged_data_with_completeness_cleaned.csv` can be used in Power BI.
 - Create a one-page dashboard with:
-  - Completeness trends
   - Manufacturer performance
-  - Top product gaps
-  - Visual filters by quality label
+  - Manfactures with bad fields
+  - Dax for Product Name and bad fields. This helps us finds gaps in products/main_product, manufactures, manufacturer numbers etc.
 
 ---
 
