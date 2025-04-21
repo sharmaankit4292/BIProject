@@ -111,7 +111,7 @@ ETIM (European Technical Information Model) is valuable for **external** product
 
 ---
 
-## 🧪 Optional: Use SQL for Analysis
+## 🧪Use SQL for Analysis
 
 The cleaned dataset is loaded into an in-memory SQLite DB:
 - You can query it using standard SQL.
@@ -119,14 +119,19 @@ The cleaned dataset is loaded into an in-memory SQLite DB:
 
 ---
 
-## 🧩 Bonus: Ideas for Production Readiness
+##  Bonus: Ideas for Production Readiness
 
-For a full production setup:
-- Add **unit tests** for each cleaning step.
-- Use **logging** instead of `print()` statements.
-- Track data quality history with **versioning or audit logs**.
-- Parameterize file paths and thresholds via a **config file**.
-- Package the logic in a **modular pipeline or ETL framework**.
+To elevate this project into a production-ready pipeline, consider the following best practices:
+
+-  **Add Unit Tests**: Test each data cleaning, merging, and validation step to ensure robustness and prevent regressions.
+-  **Track Data Quality History**: Implement versioning and audit logging to monitor data quality trends over time and support rollback if needed.
+-  **Parameterize via Config Files**: Manage file paths, validation thresholds, and column mappings using config files or environment variables for flexibility and scalability.
+-  **Build a Modular ETL Pipeline**: Break the logic into clear, reusable steps using an Extract-Transform-Load framework to support batch or streaming data.
+-  **Environment Separation (Dev, Test, Prod)**: Establish different environments to support experimentation, testing, and deployment without data contamination. This helps enforce data governance and approval flows.
+-  **Implement CI/CD Pipelines**: Use DevOps practices like GitHub Actions, Jenkins, or Azure Pipelines to automate testing, linting, deployment, and report generation. This improves delivery speed and reduces manual errors.
+  **Implement Row level security*: managing access level for different departments, stakeholders & externals.
+These practices ensure scalability, reliability, and maintainability—making the solution enterprise-ready and aligned with NexMart’s data strategy goals.
+
 
 ---
 
