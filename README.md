@@ -130,7 +130,8 @@ ETIM (European Technical Information Model) is valuable for **external** product
 The cleaned dataset is loaded into an in-memory SQLite DB:
 - You can query it using the notebook itself with Sqlite library.
 - Useful for additional insights (e.g., most improved manufacturers, field-level gaps).
-- The explanation and output is attached in the folder. 
+- The explanation for the Sql query is the word file called **sqlqueryexplanation**.
+- The output of sql code is in the **Data** folder above. 
 
 ---
 
