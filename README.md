@@ -110,7 +110,7 @@ ETIM (European Technical Information Model) is valuable for **external** product
 
 # 📁 Output Files
 
-This folder contains cleaned datasets along with results from various SQL queries run during the data quality assessment process.
+The **data** folder contains cleaned datasets along with results from various SQL queries run during the data quality assessment process.
 
 ---
 
@@ -188,7 +188,7 @@ These practices ensure scalability, reliability, and maintainability—making th
   - Manufacturer performance
   - Manfactures with bad fields
   - Dax for Product Name and bad fields. This helps us finds gaps in products/main_product, manufactures, manufacturer numbers etc.
-  - The Code and Explanation for the Dax code is the Dax code & Explanation.txt file
+  - The Code and Explanation for the Dax code is the **Dax code & Explanation.txt** file
 
 ---
 
