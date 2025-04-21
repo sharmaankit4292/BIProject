@@ -129,7 +129,8 @@ To elevate this project into a production-ready pipeline, consider the following
 -  **Build a Modular ETL Pipeline**: Break the logic into clear, reusable steps using an Extract-Transform-Load framework to support batch or streaming data.
 -  **Environment Separation (Dev, Test, Prod)**: Establish different environments to support experimentation, testing, and deployment without data contamination. This helps enforce data governance and approval flows.
 -  **Implement CI/CD Pipelines**: Use DevOps practices like GitHub Actions, Jenkins, or Azure Pipelines to automate testing, linting, deployment, and report generation. This improves delivery speed and reduces manual errors.
-  **Implement Row level security*: managing access level for different departments, stakeholders & externals.
+  **Implement Row level security**: managing access level for different departments, stakeholders & externals.
+   
 These practices ensure scalability, reliability, and maintainability—making the solution enterprise-ready and aligned with NexMart’s data strategy goals.
 
 
