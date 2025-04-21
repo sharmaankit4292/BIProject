@@ -127,14 +127,13 @@ This folder contains cleaned datasets along with results from various SQL querie
 ## 🗃️ SQL Query Output Files
 
 | File Name                               | Description                                                       |
-|----------------------------------------|-------------------------------------------------------------------|
-| `sqlquery1_Manufacturer_quality.csv`   | Manufacturer-level quality statistics (Query 1)                   |
-| `sqlquery1_1_mostimproved.csv`         | Manufacturers with the most improved quality (Subquery 1.1)       |
-| `sqlquery1_2_Manufacturer_quality.csv` | Detailed manufacturer quality view (Subquery 1.2)                 |
+|----------------------------------------|-------------------------------------------------------------------|                  |
+| `sqlquery1.1_mostimproved.csv`         | Manufacturers with the most improved quality (Query 1.1)       |
+| `sqlquery1.2_Manufacturer_quality.csv` | Detailed manufacturer quality view (Subquery 1.2)                 |
 | `sqlquery2_field_completion_rates.csv` | Field-wise completion rate analysis (Query 2)                     |
-| `sqlquery3_1_EANvsquality.csv`         | Relationship between EAN completeness and product quality (Q3.1) |
-| `sqlquery3_2_missing_combinations.csv` | Missing key combinations across fields (Query 3.2)                |
-| `sqlquery1_mostimproved.csv`           | Alternate export of most improved manufacturers                  |
+| `sqlquery3.1_EANvsquality.csv`         | Relationship between EAN completeness and product quality (Query 3.1) |
+| `sqlquery3.2_missing_combinations.csv` | Missing key combinations across fields (Query 3.2)                |
+           
 
 ---
 
