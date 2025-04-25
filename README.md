@@ -118,9 +118,9 @@ The **data** folder contains cleaned datasets along with results from various SQ
 
 | File Name                                         | Description                                      |
 |--------------------------------------------------|--------------------------------------------------|
-| `merged_data_with_completeness_cleaned_final.csv` | Full dataset with completeness indicators        |
-| `good_quality_data_cleaned_final.csv`             | Products with full, high-quality data            |
-| `bad_quality_data_cleaned_final.csv`              | Products missing key fields                      |
+| `merged_data_with_completeness_final.csv` | Full dataset with completeness indicators        |
+| `good_quality_data_final.csv`             | Products with full, high-quality data            |
+| `bad_quality_data_final.csv`              | Products missing key fields                      |
 
 ---
 ## 🗃️ SQL Query Output Files
