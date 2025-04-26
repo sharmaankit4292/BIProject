@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[18]:
+
 
 
 # updated_pipeline.py
@@ -206,13 +206,8 @@ if __name__ == "__main__":
     main()
 
 
-# In[19]:
 
 
-merged_df
-
-
-# In[ ]:
 
 
 
