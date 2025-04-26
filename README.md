@@ -158,10 +158,10 @@ The `requirements.txt` file ensures consistent Python package versions across al
 | `pandas` | 1.3.0 | Data manipulation (CSV processing, merging datasets) |
 | `numpy` | 1.21.0 | Handling missing data (`NaN` values) |
 
----
-
-### 📜 File Contents
-```plaintext
+📜 File Contents
+plaintext
+Copy
+Edit
 # Core Data Processing
 pandas>=1.3.0
 numpy>=1.21.0
@@ -173,82 +173,106 @@ pip package manager (included with Python)
 
 Installation
 bash
+Copy
+Edit
 pip install -r requirements.txt
 Verification
 bash
+Copy
+Edit
 python src/updated_pipeline.py
 💻 Technical Notes
-Version syntax (>=) allows newer compatible versions
+Version syntax (>=) allows newer compatible versions.
 
-sqlite3 is included in Python's standard library
+sqlite3 is included in Python's standard library.
 
-No additional packages needed for basic execution
+No additional packages are needed for basic execution.
 
 🔧 Recommended for Development
-Add to requirements.txt:
+Add these to your requirements.txt for development:
 
 plaintext
+Copy
+Edit
 # Development Tools
-jupyter>=1.0.0     # Interactive notebooks
-flake8>=3.9.0      # Code quality checks
+jupyter>=1.0.0      # Interactive notebooks
+flake8>=3.9.0       # Code quality checks
 📂 Project Structure
+plaintext
+Copy
+Edit
 NewMart_DataPipeline/
-├── requirements.txt    # Dependency file
-├── src/               # Python scripts
+├── requirements.txt           # Dependency file
+├── src/                       # Python scripts
 │   └── updated_pipeline.py
-└── data/              # All data files
+└── data/                      # All data files
     ├── manufacturers.csv
     ├── product_descriptions.csv
     └── product_properties.csv
-
 ▶️ How to Run
-Place input files in /data folder
+Place input files inside the /data folder.
 
-Install dependencies: pip install -r requirements.txt
+Install dependencies:
 
-Execute: python src/updated_pipeline.py
+bash
+Copy
+Edit
+pip install -r requirements.txt
+Execute the pipeline:
 
+bash
+Copy
+Edit
+python src/updated_pipeline.py
+🧪 Use SQL for Analysis
+The cleaned dataset is loaded into an in-memory SQLite database.
 
+You can query it using the provided notebook and the built-in sqlite3 library.
 
-## 🧪Use SQL for Analysis
+Useful for insights like most improved manufacturers, and detecting field-level gaps.
 
-The cleaned dataset is loaded into an in-memory SQLite DB:
-- You can query it using the notebook itself with Sqlite library.
-- Useful for additional insights (e.g., most improved manufacturers, field-level gaps).
-- The explanation for the Sql query is in the word file called **sqlqueryexplanation**.
-- The output of sql code is in the **Data** folder above. 
+SQL query explanations are provided in sqlqueryexplanation.docx.
 
----
+SQL outputs are available in the data/ folder.
 
-##  Bonus: Ideas for Production Readiness
+🚀 Bonus: Ideas for Production Readiness
+To take this project to production level:
 
-To elevate this project into a production-ready pipeline, consider the following best practices:
+Add Unit Tests: Ensure all steps like data cleaning, merging, and validation are tested.
 
--  **Add Unit Tests**: Test each data cleaning, merging, and validation step to ensure robustness and prevent regressions.
--  **Track Data Quality History**: Implement versioning and audit logging to monitor data quality trends over time and support rollback if needed.
--  **Parameterize via Config Files**: Manage file paths, validation thresholds, and column mappings using config files or environment variables for flexibility and scalability.
--  **Build a Modular ETL Pipeline**: Break the logic into clear, reusable steps using an Extract-Transform-Load framework to support batch or streaming data.
--  **Environment Separation (Dev, Test, Prod)**: Establish different environments to support experimentation, testing, and deployment without data contamination. This helps enforce data governance and approval flows.
--  **Implement CI/CD Pipelines**: Use DevOps practices like GitHub Actions, Jenkins, or Azure Pipelines to automate testing, linting, deployment, and report generation. This improves delivery speed and reduces manual errors.
-- **Implement Row level security**: managing access level for different departments, stakeholders & externals.
-   
-These practices ensure scalability, reliability, and maintainability—making the solution enterprise-ready and aligned with NexMart’s data strategy goals.
+Track Data Quality History: Implement versioning, audit logs, and rollback mechanisms.
 
+Use Config Files: Parameterize paths, thresholds, and mappings for flexibility.
 
----
+Design a Modular ETL Pipeline: Extract, transform, and load steps should be separate and reusable.
 
-## 📊 Next Steps: Power BI Dashboard
+Separate Environments: Set up Dev, Test, and Production environments.
 
-- The exported `merged_data_with_completeness_cleaned_final.csv` can be used in Power BI.
-- Create a one-page dashboard with: **NexMart.pbix**
-  - Manufacturer performance
-  - Manfactures with bad fields
-  - Dax for Product Name and bad fields. This helps us finds gaps in products/main_product, manufactures, manufacturer numbers etc.
-  - The Code and Explanation for the Dax code is the **Dax code & Explanation.txt** file
+Implement CI/CD Pipelines: Automate tests, code linting, and deployments using GitHub Actions, Jenkins, or Azure Pipelines.
 
----
+Apply Row-Level Security: Manage data access for different departments and external stakeholders.
 
-## ✅ Summary
+📈 Next Steps: Power BI Dashboard
+Exported file: merged_data_with_completeness_cleaned_final.csv is available for Power BI.
 
-Improving data quality drives better product listings, internal efficiency, and decision-making. This project provides a framework to identify gaps, prioritize fixes, and improve the data landscape at NexMart.
+Create a one-page dashboard: NexMart.pbix showcasing:
+
+Manufacturer performance
+
+Manufacturers with missing fields
+
+DAX calculations for gaps in product fields
+
+The DAX code and explanations are available in Dax code & Explanation.txt.
+
+✅ Summary
+Improving data quality will lead to:
+
+Enhanced product listings
+
+Streamlined internal operations
+
+Data-driven decision-making
+
+This project builds a foundation to identify data gaps, prioritize corrections, and improve the overall data ecosystem at NexMart..
 
