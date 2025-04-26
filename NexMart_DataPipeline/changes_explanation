@@ -1,0 +1,21 @@
+Changes Explanation
+
+1. Folder Structure Changes:
+- Modified the folder structure to make it easier to emulate and clone in local Git repositories.
+- The new structure is designed to be more intuitive and facilitate better version control practices.
+
+2. File Updates:
+- Replaced an existing file with updated versions.
+- Added both .ipynb (Jupyter Notebook) and .py files that now contain the desired results printed in Github.
+
+3. Error Explanation:
+- During the process of copying and pasting code from other Jupyter Notebooks, I accidentally pasted the print statement before the actual variable assignment.
+- The sequence error occurred because:
+  * The print statement was placed before the function call that generates the result
+  * When Python executed the print statement, the variable being printed hadn't been defined yet
+  * The function call that produces and stores the result was missing
+- This has now been corrected by ensuring proper code sequence:
+  1. First call the function and store its result
+  2. Then print the result
+
+The changes ensure the code executes properly and displays the expected output in both local environments and when rendered on GitHub.
