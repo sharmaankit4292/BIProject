@@ -1,6 +1,6 @@
 # 📦 NexMart Data Assessment
 
-This project analyzes and improves the quality of product data from NexMart. The goal is to clean, validate, and assess product information to ensure it's optimized for internal operations for better decision making across various stakeholders like Sales, Product etc.
+This project analyzes and improves the quality of product data from NexMart. The goal is to clean, validate, and assess product information to ensure it's optimized for internal operations for better decision making across various stakeholders like Sales, Product, etc.
 
 ## 🛠 What the Code Does
 
@@ -113,6 +113,10 @@ ETIM (European Technical Information Model) was excluded because:
 ## 📋 Project Dependencies (`requirements.txt`)
 
 ### Core Requirements
+- `pandas`
+- `numpy`
+- `sqlite3`
+
 # NexMart Data Pipeline
 
 This repository contains a data processing pipeline for analyzing product data. The main script, `updated_pipeline.py`, processes, merges, cleans, and analyzes product datasets to assess the completeness and quality of product descriptions.
@@ -219,20 +223,30 @@ To run this project, ensure that you have the following installed on your system
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-
 ### 🛠️ Setup Instructions
 1. Install Python 3.6 or later
 2. Run: `pip install -r requirements.txt`
 3. Execute: `python src/Updated_NexMart_datapipelineandSql.py`
 
 ## 🚀 Bonus: Ideas for Production Readiness
-- Add Unit Tests
-- Track Data Quality History
-- Use Config Files
-- Design Modular ETL Pipeline
-- Separate Environments (Dev/Test/Prod)
-- Implement CI/CD Pipelines
-- Apply Row-Level Security
+
+- **Add Unit Tests**: Ensure critical parts of the pipeline are tested automatically, improving reliability and reducing bugs.
+- **Track Data Quality History**: Implement versioning for data quality metrics over time to track improvements or regressions.
+- **Use Config Files**: Parameterize the pipeline using configuration files for better flexibility and easier environment changes.
+- **Design Modular ETL Pipeline**: Break down the pipeline into smaller, reusable modules for better maintainability and scalability.
+- **Separate Environments (Dev/Test/Prod)**: Set up separate environments for development, testing, and production to ensure stable deployments.
+- **Implement CI/CD Pipelines**: 
+  - Set up **Continuous Integration/Continuous Deployment (CI/CD)** pipelines to automate testing and deployment. 
+  - Use services like GitHub Actions, GitLab CI, or Jenkins to trigger tests and deployments on code changes.
+  - **Creating Branches in Visual Studio Code**:
+    - When working with CI/CD pipelines, it’s essential to manage branches effectively. In Visual Studio Code, you can easily create and manage branches to isolate different features or fixes before merging them into the main branch.
+    - To create a new branch in VS Code, follow these steps:
+      1. Open the **Source Control** tab in VS Code.
+      2. Click on the branch name in the bottom left corner of the window.
+      3. Select **Create New Branch** and give it a descriptive name.
+      4. Make your changes, commit them, and push the branch to your repository.
+      5. Use pull requests to merge the branch into the main codebase, ensuring that all tests pass before merging.
+- **Apply Row-Level Security**: Protect sensitive data by applying security rules at the row level within the data warehouse or database, ensuring only authorized users can view certain rows of data.
 
 ## 📈 Next Steps: Power BI Dashboard
 Use `merged_data_with_completeness_final.csv` to create dashboard showing:
