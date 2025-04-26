@@ -213,16 +213,6 @@ To run this project, ensure that you have the following installed on your system
 - `bad_quality_data_final.csv`: Contains products with "bad" description quality.
 - Additional CSV files from SQL queries, such as `Manufacturer_quality.csv`, `field_completion_rates.csv`, and others.
 
-## Enhancements for Reproducibility
-
-- **Environment Management**: Use virtual environments to isolate dependencies.
-- **Data Files**: Ensure that the data files are available in the `data/` directory before running the pipeline.
-- **Parameterization**: If applicable, consider parameterizing paths and file names for greater flexibility in different environments.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ### 🛠️ Setup Instructions
 1. Install Python 3.6 or later
 2. Run: `pip install -r requirements.txt`
