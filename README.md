@@ -180,7 +180,7 @@ To run this project, ensure that you have the following installed on your system
    - Type `Python: Select Interpreter` and select the virtual environment you created earlier (e.g., `./venv`).
 
 4. **Run the Script in VS Code**:  
-   You can run the `updated_pipeline.py` script directly from VS Code:
+   You can run the `Updated_NexMart_datapipelineandSql.py` script directly from VS Code:
 
    - Open the `updated_pipeline.py` file.
    - Click the **Run** button at the top-right of the editor or use the shortcut `F5` to run the script.
@@ -197,7 +197,7 @@ To run this project, ensure that you have the following installed on your system
 - Run the pipeline:
 
     ```bash
-    python updated_pipeline.py
+    python Updated_NexMart_datapipelineandSql.py
     ```
 
  - The script will:
