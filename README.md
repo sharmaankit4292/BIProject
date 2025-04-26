@@ -137,6 +137,6 @@ Use `merged_data_with_completeness_final.csv` to create dashboard showing:
 
 ## ✅ Summary
 Improving data quality will lead to:
-- Enhanced product listings
+- Enhanced product listings which directly affects the sales
 - Streamlined internal operations
 - Data-driven decision-making
