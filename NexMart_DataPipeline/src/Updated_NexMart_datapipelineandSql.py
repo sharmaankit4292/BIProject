@@ -1,25 +1,18 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-
-
-
 # updated_pipeline.py
 
 # --- Import Libraries ---
 import pandas as pd
 import numpy as np
 import sqlite3
-import os
 
 def main():
-    # --- Ensure Data Folder Exists ---
-    os.makedirs("./Data", exist_ok=True)
-
     # --- Load Datasets ---
-    manufacturers = pd.read_csv("./Data/manufacturers.csv", sep=';')
-    product_descriptions = pd.read_csv("./Data/product_descriptions.csv", sep=';')
-    product_properties = pd.read_csv("./Data/product_properties.csv", sep=';')
+    manufacturers = pd.read_csv("./data/manufacturers.csv", sep=';')
+    product_descriptions = pd.read_csv("./data/product_descriptions.csv", sep=';')
+    product_properties = pd.read_csv("./data/product_properties.csv", sep=';')
 
     # --- Normalize Column Names ---
     manufacturers.rename(columns={
@@ -89,6 +82,7 @@ def main():
     print(f"Total Records: {len(merged_df)}")
     print(f"Complete Records (all fields populated): {merged_df['Is Complete'].sum()}")
     print(f"Records with Missing Fields: {len(merged_df) - merged_df['Is Complete'].sum()}")
+
     print("\nMissing Fields Distribution:")
     print(merged_df['Missing Fields Count'].value_counts().sort_index())
 
@@ -96,9 +90,9 @@ def main():
     print(f"Bad Quality Records: {len(bad_quality_df)}")
 
     # --- Export Cleaned and Analyzed Data ---
-    merged_df.to_csv("./Data/merged_data_with_completeness_final.csv", index=False)
-    good_quality_df.to_csv("./Data/good_quality_data_final.csv", index=False)
-    bad_quality_df.to_csv("./Data/bad_quality_data_final.csv", index=False)
+    merged_df.to_csv("./data/merged_data_with_completeness_final.csv", index=False)
+    good_quality_df.to_csv("./data/good_quality_data_final.csv", index=False)
+    bad_quality_df.to_csv("./data/bad_quality_data_final.csv", index=False)
 
     # --- Load into SQLite In-Memory ---
     conn = sqlite3.connect(':memory:')
@@ -193,11 +187,11 @@ def main():
     print(most_improved)
 
     # --- Export All Results to CSV ---
-    manufacturer_stats.to_csv("./Data/sqlquerry1.2_Manufacturer_quality.csv", index=False)
-    field_completion.to_csv("./Data/sqlquerry2_field_completion_rates.csv", index=False)
-    insights['ean_correlation'].to_csv("./Data/Sqlquery3.1_Eanvsquality.csv", index=False)
-    insights['missing_field_combinations'].to_csv("./Data/Sqlquery3.2_missing_combinations.csv", index=False)
-    most_improved.to_csv("./Data/sqlquerry1_mostimproved.csv", index=False)
+    manufacturer_stats.to_csv("./data/sqlquerry1.2_Manufacturer_quality.csv", index=False)
+    field_completion.to_csv("./data/sqlquerry2_field_completion_rates.csv", index=False)
+    insights['ean_correlation'].to_csv("./data/Sqlquery3.1_Eanvsquality.csv", index=False)
+    insights['missing_field_combinations'].to_csv("./data/Sqlquery3.2_missing_combinations.csv", index=False)
+    most_improved.to_csv("./data/sqlquerry1_mostimproved.csv", index=False)
 
     print("\nAll CSV files saved successfully.")
 
