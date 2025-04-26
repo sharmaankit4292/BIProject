@@ -113,6 +113,111 @@ ETIM (European Technical Information Model) was excluded because:
 ## 📋 Project Dependencies (`requirements.txt`)
 
 ### Core Requirements
+# NexMart Data Pipeline
+
+This repository contains a data processing pipeline for analyzing product data. The main script, `updated_pipeline.py`, processes, merges, cleans, and analyzes product datasets to assess the completeness and quality of product descriptions.
+
+## Prerequisites
+
+To run this project, ensure that you have the following installed on your system:
+
+- Python 3.x
+- pip (Python package installer)
+- [Visual Studio Code](https://code.visualstudio.com/) (VS Code)
+
+## Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/sharmaankit4292/NexMart.git
+    cd NexMart
+    ```
+
+2. Install the required Python libraries:
+
+    It is recommended to use a virtual environment for managing dependencies. You can create and activate a virtual environment using the following commands:
+
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    ```
+
+    Then install the required dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+    **Note**: If `requirements.txt` is not present in the repo, you can manually install the dependencies with:
+
+    ```bash
+    pip install pandas numpy sqlite3
+    ```
+
+## Setting Up in Visual Studio Code
+
+1. **Open the Project in VS Code**:  
+   After cloning the repository, you can open the project in Visual Studio Code by running:
+
+    ```bash
+    code .
+    ```
+
+   This will open the project in VS Code.
+
+2. **Python Extension**:  
+   Make sure to install the [Python extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python) if you haven't already. This extension provides features like IntelliSense, code linting, debugging, and more.
+
+3. **Configure the Python Environment**:  
+   In VS Code, select the virtual environment as the Python interpreter for the project:
+
+   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS) to open the Command Palette.
+   - Type `Python: Select Interpreter` and select the virtual environment you created earlier (e.g., `./venv`).
+
+4. **Run the Script in VS Code**:  
+   You can run the `updated_pipeline.py` script directly from VS Code:
+
+   - Open the `updated_pipeline.py` file.
+   - Click the **Run** button at the top-right of the editor or use the shortcut `F5` to run the script.
+
+## File Structure
+
+- `data/`: Directory containing raw CSV files such as `manufacturers.csv`, `product_descriptions.csv`, and `product_properties.csv`.
+- `updated_pipeline.py`: The main script for processing and analyzing the product data.
+
+## How to Execute
+
+- Ensure that the required data files (`manufacturers.csv`, `product_descriptions.csv`, and `product_properties.csv`) are placed in the `data/` directory.
+
+- Run the pipeline:
+
+    ```bash
+    python updated_pipeline.py
+    ```
+
+ - The script will:
+    - Load the datasets
+    - Clean and preprocess the data
+    - Merge the datasets based on common fields
+    - Analyze the data for completeness and description quality
+    - Export the results to CSV files in the `data/` directory
+
+### Output Files:
+- `merged_data_with_completeness_final.csv`: Contains the merged data with completeness metrics.
+- `good_quality_data_final.csv`: Contains products with "good" description quality.
+- `bad_quality_data_final.csv`: Contains products with "bad" description quality.
+- Additional CSV files from SQL queries, such as `Manufacturer_quality.csv`, `field_completion_rates.csv`, and others.
+
+## Enhancements for Reproducibility
+
+- **Environment Management**: Use virtual environments to isolate dependencies.
+- **Data Files**: Ensure that the data files are available in the `data/` directory before running the pipeline.
+- **Parameterization**: If applicable, consider parameterizing paths and file names for greater flexibility in different environments.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
 ### 🛠️ Setup Instructions
