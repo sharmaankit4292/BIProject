@@ -118,7 +118,7 @@ ETIM (European Technical Information Model) was excluded because:
 ### 🛠️ Setup Instructions
 1. Install Python 3.6 or later
 2. Run: `pip install -r requirements.txt`
-3. Execute: `python src/updated_pipeline.py`
+3. Execute: `python src/Updated_NexMart_datapipelineandSql.py`
 
 ## 🚀 Bonus: Ideas for Production Readiness
 - Add Unit Tests
