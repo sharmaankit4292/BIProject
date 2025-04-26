@@ -117,9 +117,9 @@ ETIM (European Technical Information Model) was excluded because:
 - `numpy`
 - `sqlite3`
 
-# NexMart Data Pipeline
+# Execution 
 
-This repository contains a data processing pipeline for analyzing product data. The main script, `updated_pipeline.py`, processes, merges, cleans, and analyzes product datasets to assess the completeness and quality of product descriptions.
+This repository contains a data processing pipeline for analyzing product data. The main script, `Updated_NexMart_datapipelineandSql.py`, processes, merges, cleans, and analyzes product datasets to assess the completeness and quality of product descriptions.
 
 ## Prerequisites
 
