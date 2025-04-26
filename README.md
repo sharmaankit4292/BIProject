@@ -145,14 +145,70 @@ The **data** folder contains cleaned datasets along with results from various SQ
 
 ---
 
-## ▶️ How to Run
+## 📋 Project Dependencies (`requirements.txt`)
 
-1. Clone the repo and place the data files inside the `/data` folder.
-2. Adjust the file paths in the script if necessary.
-3. Run the Python and SQL script together in one notebook in your local environment.
-4. Check the printed console output and exported files.
+### Purpose
+The `requirements.txt` file ensures consistent Python package versions across all environments running this data pipeline.
 
 ---
+
+### 🧰 Required Packages
+| Package | Minimum Version | Purpose |
+|---------|----------------|---------|
+| `pandas` | 1.3.0 | Data manipulation (CSV processing, merging datasets) |
+| `numpy` | 1.21.0 | Handling missing data (`NaN` values) |
+
+---
+
+### 📜 File Contents
+```plaintext
+# Core Data Processing
+pandas>=1.3.0
+numpy>=1.21.0
+🛠️ Setup Instructions
+Prerequisites
+Python 3.6 or later
+
+pip package manager (included with Python)
+
+Installation
+bash
+pip install -r requirements.txt
+Verification
+bash
+python src/updated_pipeline.py
+💻 Technical Notes
+Version syntax (>=) allows newer compatible versions
+
+sqlite3 is included in Python's standard library
+
+No additional packages needed for basic execution
+
+🔧 Recommended for Development
+Add to requirements.txt:
+
+plaintext
+# Development Tools
+jupyter>=1.0.0     # Interactive notebooks
+flake8>=3.9.0      # Code quality checks
+📂 Project Structure
+NewMart_DataPipeline/
+├── requirements.txt    # Dependency file
+├── src/               # Python scripts
+│   └── updated_pipeline.py
+└── data/              # All data files
+    ├── manufacturers.csv
+    ├── product_descriptions.csv
+    └── product_properties.csv
+
+▶️ How to Run
+Place input files in /data folder
+
+Install dependencies: pip install -r requirements.txt
+
+Execute: python src/updated_pipeline.py
+
+
 
 ## 🧪Use SQL for Analysis
 
