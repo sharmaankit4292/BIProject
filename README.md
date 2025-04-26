@@ -182,7 +182,7 @@ To run this project, ensure that you have the following installed on your system
 4. **Run the Script in VS Code**:  
    You can run the `Updated_NexMart_datapipelineandSql.py` script directly from VS Code:
 
-   - Open the `updated_pipeline.py` file.
+   - Open the `Updated_NexMart_datapipelineandSql.py` file.
    - Click the **Run** button at the top-right of the editor or use the shortcut `F5` to run the script.
 
 ## File Structure
