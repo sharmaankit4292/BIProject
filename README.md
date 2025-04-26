@@ -158,11 +158,12 @@ The `requirements.txt` file ensures consistent Python package versions across al
 | `pandas` | 1.3.0 | Data manipulation (CSV processing, merging datasets) |
 | `numpy` | 1.21.0 | Handling missing data (`NaN` values) |
 
-📜 File Contents
+##📜 File Contents
 plaintext
 Copy
 Edit
-# Core Data Processing
+
+## Core Data Processing
 pandas>=1.3.0
 numpy>=1.21.0
 🛠️ Setup Instructions
@@ -194,7 +195,7 @@ Add these to your requirements.txt for development:
 plaintext
 Copy
 Edit
-# Development Tools
+## Development Tools
 jupyter>=1.0.0      # Interactive notebooks
 flake8>=3.9.0       # Code quality checks
 📂 Project Structure
@@ -235,7 +236,7 @@ SQL query explanations are provided in sqlqueryexplanation.docx.
 
 SQL outputs are available in the data/ folder.
 
-🚀 Bonus: Ideas for Production Readiness
+##🚀 Bonus: Ideas for Production Readiness
 To take this project to production level:
 
 Add Unit Tests: Ensure all steps like data cleaning, merging, and validation are tested.
@@ -252,8 +253,8 @@ Implement CI/CD Pipelines: Automate tests, code linting, and deployments using G
 
 Apply Row-Level Security: Manage data access for different departments and external stakeholders.
 
-📈 Next Steps: Power BI Dashboard
-Exported file: merged_data_with_completeness_cleaned_final.csv is available for Power BI.
+##📈 Next Steps: Power BI Dashboard
+Exported file: merged_data_with_completeness_final.csv is available for Power BI.
 
 Create a one-page dashboard: NexMart.pbix showcasing:
 
@@ -265,7 +266,7 @@ DAX calculations for gaps in product fields
 
 The DAX code and explanations are available in Dax code & Explanation.txt.
 
-✅ Summary
+## ✅ Summary
 Improving data quality will lead to:
 
 Enhanced product listings
