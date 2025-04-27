@@ -18,4 +18,8 @@ Changes Explanation
   1. First call the function and store its result
   2. Then print the result
 
+4. Improvement: To enhance the workflow, I created a dedicated branch named **`dev`** using Visual Studio Code.  
+In this branch, I improved the **print statement formatting** for better readability across outputs.  
+After committing the changes, I pushed the branch to the repository and created a **Pull Request**.  
+This ensures a clean and traceable development history for better collaboration and tracking.  
 The changes ensure the code executes properly and displays the expected output in both local environments and when rendered on GitHub.
