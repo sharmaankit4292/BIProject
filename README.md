@@ -228,14 +228,6 @@ To run this project, ensure that you have the following installed on your system
 - **Implement CI/CD Pipelines**: 
   - Set up **Continuous Integration/Continuous Deployment (CI/CD)** pipelines to automate testing and deployment. 
   - Use services like GitHub Actions, GitLab CI, or Jenkins to trigger tests and deployments on code changes.
-  - **Creating Branches in Visual Studio Code**:
-    - When working with CI/CD pipelines, it’s essential to manage branches effectively. In Visual Studio Code, you can easily create and manage branches to isolate different features or fixes before merging them into the main branch.
-    - To create a new branch in VS Code, follow these steps:
-      1. Open the **Source Control** tab in VS Code.
-      2. Click on the branch name in the bottom left corner of the window.
-      3. Select **Create New Branch** and give it a descriptive name.
-      4. Make your changes, commit them, and push the branch to your repository.
-      5. Use pull requests to merge the branch into the main codebase, ensuring that all tests pass before merging.
 - **Apply Row-Level Security**: Protect sensitive data by applying security rules at the row level within the data warehouse or database, ensuring only authorized users can view certain rows of data.
 
 ## 📈 Next Steps: Power BI Dashboard
