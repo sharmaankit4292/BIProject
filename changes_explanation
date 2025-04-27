@@ -1,14 +1,17 @@
 Changes Explanation
 
 1. Folder Structure Changes:
+
 - Modified the folder structure to make it easier to emulate and clone in local Git repositories.
 - The new structure is designed to be more intuitive and facilitate better version control practices.
 
 2. File Updates:
+
 - Replaced an existing file with updated versions.
 - Added both .ipynb (Jupyter Notebook) and .py files that now contain the desired results printed in Github.
 
 3. Error Explanation:
+
 - During the process of copying and pasting code from other Jupyter Notebooks, I accidentally pasted the print statement before the actual variable assignment.
 - The sequence error occurred because:
   * The print statement was placed before the function call that generates the result
@@ -18,7 +21,8 @@ Changes Explanation
   1. First call the function and store its result
   2. Then print the result
 
-4. Improvement: To enhance the workflow, I created a dedicated branch named **`dev`** using Visual Studio Code.  
+4. Improvement:
+ To enhance the workflow, I created a dedicated branch named **`dev`** using Visual Studio Code.  
 In this branch, I improved the **print statement formatting** for better readability across outputs.  
 After committing the changes, I pushed the branch to the repository and created a **Pull Request**.  
 This ensures a clean and traceable development history for better collaboration and tracking.  
