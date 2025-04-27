@@ -218,9 +218,13 @@ To run this project, ensure that you have the following installed on your system
 2. Run: `pip install -r requirements.txt`
 3. Execute: `python src/Updated_NexMart_datapipelineandSql.py`
 
-## 🛠️ Improvements Made During Additional Time Given
-To enhance the workflow, I created a dedicated branch named dev using Visual Studio Code. In this branch, I improved the print statement formatting for better readability across outputs. After committing the changes, I pushed the branch to the repository and created a Pull Request to merge the improvements into the main branch. This ensures a clean and traceable development history.
-🔗 View Pull Request #1 – NexMart Repository
+## 🛠️ Improvements Made During Additional Time
+
+To enhance the workflow, I created a dedicated branch named **`dev`** using Visual Studio Code.  
+In this branch, I improved the **print statement formatting** for better readability across outputs.  
+After committing the changes, I pushed the branch to the repository and created a **Pull Request**.  
+This ensures a clean and traceable development history for better collaboration and tracking.  
+🔗 [View Pull Request #1 – NexMart Repository](https://github.com/sharmaankit4292/NexMart/pull/1)
 
 
 ## 🚀 Bonus: Ideas for Production Readiness
