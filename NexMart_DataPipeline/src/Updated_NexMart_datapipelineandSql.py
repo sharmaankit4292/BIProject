@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# updated_pipeline.py
-
 # --- Import Libraries ---
 import pandas as pd
 import numpy as np
@@ -193,12 +191,9 @@ def main():
     insights['missing_field_combinations'].to_csv("./data/Sqlquery3.2_missing_combinations.csv", index=False)
     most_improved.to_csv("./data/sqlquerry1_mostimproved.csv", index=False)
 
-    print("\nAll CSV files saved successfully.")
+    # Improved final print statement:
+    print("\nAll CSV files have been saved successfully in the ./data folder. Ready for Power BI visualization!")
 
 # --- Run Everything ---
 if __name__ == "__main__":
     main()
-
-
-
-
